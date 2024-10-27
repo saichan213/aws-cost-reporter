@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "cost_reporter" {
-  name     = "${local.service_name}-topic"
+  name = "${local.service_name}-topic"
 }
 
 resource "aws_sns_topic_subscription" "cost_reporter" {
