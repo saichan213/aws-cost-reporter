@@ -15,14 +15,6 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/sns"
 )
 
-// func main() {
-// 	client := getClient()
-// 	startDate, endDate := getDate()
-
-// 	servicecosts.GetServiceCosts(startDate, endDate, client)
-// 	totalcost.GetTotalCost(startDate, endDate, client)
-// }
-
 func main() {
 	lambda.Start(HandleRequest)
 }
@@ -34,6 +26,17 @@ func HandleRequest() {
 
 	message.PublishMessage(client, costMassage)
 }
+
+// main function for debug
+// func main() {
+// 	client := NewClient()
+// 	date := NewDate()
+// 	costMassage := NewMassage(client, date)
+
+// 	resultMessage := fmt.Sprintf("%s\n%s\n%s", costMassage.TermMessage, costMassage.TotalCostMassage, costMassage.ServiceCostMessage)
+
+// 	fmt.Println(resultMessage)
+// }
 
 func NewClient() *common.Client {
 	cfg, err := config.LoadDefaultConfig(context.TODO())
