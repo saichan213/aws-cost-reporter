@@ -1,13 +1,25 @@
 # aws-cost-reporter
 
-report aws personal account cost per day
+Report AWS account cost per day and per services everyday with e-mail.
 
-残り作業
-terraform apply
-test作成
-CI/CD作成
+## how to create aws resources
+
+- modify .env-sample
+  - input your mail address to MAIL_ADDRESS
+  - rename .env-sample to .env
 
 ```
-$ rm -f bootstrap
-$ GOARCH=amd64 GOOS=linux go build -tags lambda.norpc -o bootstrap
+$ basename `pwd`
+terraform
+$ make <plan or apply>
+```
+
+## how to build lambda function
+
+if you modify lamda function, you can rebuild in this way
+
+```
+$ basename `pwd`
+lambda
+$ make build
 ```
