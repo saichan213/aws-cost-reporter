@@ -27,6 +27,7 @@ $ make build
 ## CI/CD
 
 You can use Github Actions to CI(terraform plan) and CD(terraform apply)
+
 You must add two secrets on your repository
 
 - ACTIONS_ROLE
